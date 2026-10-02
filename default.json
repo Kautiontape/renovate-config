@@ -12,6 +12,12 @@
       "description": "One PR per repo for workflow action bumps, not one per action",
       "matchManagers": ["github-actions"],
       "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Language runtime bumps (base images, version files) break builds like majors do; keep them out of the non-major bundle",
+      "matchDepNames": ["python", "node", "php"],
+      "matchUpdateTypes": ["minor"],
+      "groupName": "language runtime"
     }
   ]
 }
