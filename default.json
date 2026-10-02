@@ -4,5 +4,13 @@
   "timezone": "America/New_York",
   "schedule": ["* 0-5 * * 1"],
   "labels": ["renovate"],
-  "dependencyDashboard": true
+  "dependencyDashboard": true,
+  "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "description": "One PR per repo for workflow action bumps, not one per action",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    }
+  ]
 }
