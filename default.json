@@ -29,6 +29,13 @@
       "matchPackageNames": ["@sveltejs/kit", "@sveltejs/adapter-*", "@sveltejs/vite-plugin-svelte"],
       "matchUpdateTypes": ["major"],
       "groupName": "sveltekit"
+    },
+    {
+      "description": "A database major changes the on-disk format, so the new image won't start on the old data; open these only when approved on the dashboard, then upgrade the data on purpose",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["/postgres/", "/pgautoupgrade/", "/mysql/", "/mariadb/", "/mongo/", "/redis/", "/valkey/", "/timescale/"],
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
     }
   ]
 }
