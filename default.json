@@ -36,6 +36,18 @@
       "matchPackageNames": ["/postgres/", "/pgautoupgrade/", "/mysql/", "/mariadb/", "/mongo/", "/redis/", "/valkey/", "/timescale/"],
       "matchUpdateTypes": ["major"],
       "dependencyDashboardApproval": true
+    },
+    {
+      "description": "SvelteKit 3 and svelte-check still call TypeScript 6's JS API (ts.sys), so TS 7 breaks check and build in the Svelte repos; lift once they support it",
+      "matchRepositories": ["Kautiontape/nexus36", "Kautiontape/relish-idle", "Kautiontape/regicide", "Kautiontape/yeetbin"],
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
+    },
+    {
+      "description": "statamic/cms 5 and 6 both require guzzlehttp/guzzle ^7",
+      "matchRepositories": ["Kautiontape/bamcocreate"],
+      "matchPackageNames": ["guzzlehttp/guzzle"],
+      "allowedVersions": "<8"
     }
   ]
 }
